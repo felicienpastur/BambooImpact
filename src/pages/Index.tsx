@@ -7,9 +7,8 @@ import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bamboo.jpg";
 
 const stats = [
-  { value: "625", key: "home.stat1Title" },
-  { value: "103", key: "home.stat2Title" },
-  { value: "20", key: "home.stat3Title" },
+  { value: "~100", key: "home.stat1Title" },
+  { value: "~20", key: "home.stat2Title" },
 ];
 
 const cards = [
@@ -50,7 +49,7 @@ const Index = () => {
       {/* Stats */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {stats.map((s, i) => (
               <AnimatedSection key={i} delay={i * 0.15} className="text-center">
                 <div className="text-5xl md:text-6xl font-heading font-bold text-accent mb-2">{s.value}</div>
