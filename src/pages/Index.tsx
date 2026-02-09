@@ -38,7 +38,7 @@ const Index = () => {
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base font-semibold px-8">
                 <Link to="/contact">{t("hero.cta", lang)}</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8">
+              <Button asChild variant="outline" size="lg" className="border-primary-foreground bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 text-base font-semibold px-8">
                 <Link to="/project">{t("hero.cta2", lang)}</Link>
               </Button>
             </div>

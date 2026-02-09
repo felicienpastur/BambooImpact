@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <h3 className="font-heading text-2xl font-bold mb-3">Natura Bambu</h3>
+            <h3 className="font-heading text-2xl font-bold mb-3">BambooImpact</h3>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               {t("footer.tagline", lang)}
             </p>
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-primary-foreground/10 mt-12 pt-6 text-center text-sm text-primary-foreground/50">
-          © {new Date().getFullYear()} Natura Bambu. {t("footer.rights", lang)}
+          © {new Date().getFullYear()} BambooImpact. {t("footer.rights", lang)}
         </div>
       </div>
     </footer>
