@@ -17,7 +17,7 @@ export const translations = {
       fr: "Séquestrer le carbone, valoriser les terres agricoles et générer des revenus durables grâce à la culture du bambou.",
       en: "Sequester carbon, enhance agricultural land, and generate sustainable income through bamboo cultivation.",
     },
-    cta: { fr: "Devenir partenaire", en: "Become a partner" },
+    cta: { fr: "Planter du bambou", en: "Plant bamboo" },
     cta2: { fr: "Découvrir le projet", en: "Discover the project" },
   },
   home: {
@@ -40,10 +40,10 @@ export const translations = {
     },
     card3Title: { fr: "Protection des sols", en: "Soil protection" },
     card3Desc: {
-      fr: "Le système racinaire du bambou lutte contre l'érosion et restaure la fertilité des terres dégradées.",
-      en: "Bamboo's root system fights erosion and restores fertility to degraded land.",
+      fr: "Le système racinaire du bambou lutte contre l'érosion et restaure la fertilité des terres dégradées. Il contribue également à la dépollution des sols grâce à la phytoremédiation.",
+      en: "Bamboo's root system fights erosion and restores fertility to degraded land. It also contributes to soil decontamination through phytoremediation.",
     },
-    ctaTitle: { fr: "Rejoignez l'aventure Natura Bambu", en: "Join the Natura Bambu adventure" },
+    ctaTitle: { fr: "Rejoignez l'aventure BambooImpact", en: "Join the BambooImpact adventure" },
     ctaDesc: {
       fr: "Agriculteur, propriétaire foncier ou investisseur, participez à un projet à fort impact écologique et économique.",
       en: "Farmer, landowner, or investor — take part in a project with strong ecological and economic impact.",
@@ -51,7 +51,7 @@ export const translations = {
     ctaButton: { fr: "Nous contacter", en: "Contact us" },
   },
   project: {
-    title: { fr: "Le Projet Natura Bambu", en: "The Natura Bambu Project" },
+    title: { fr: "Le Projet BambooImpact", en: "The BambooImpact Project" },
     subtitle: {
       fr: "Un modèle innovant qui associe agriculture durable, séquestration de carbone et revenus complémentaires pour les agriculteurs.",
       en: "An innovative model combining sustainable agriculture, carbon sequestration, and supplementary income for farmers.",
@@ -127,14 +127,14 @@ export const translations = {
   partners: {
     title: { fr: "Partenaires & Références", en: "Partners & References" },
     subtitle: {
-      fr: "Natura Bambu s'appuie sur un réseau de partenaires engagés pour un avenir durable.",
-      en: "Natura Bambu relies on a network of committed partners for a sustainable future.",
+      fr: "BambooImpact s'appuie sur un réseau de partenaires engagés pour un avenir durable.",
+      en: "BambooImpact relies on a network of committed partners for a sustainable future.",
     },
     comingSoon: {
       fr: "Nous construisons activement notre réseau de partenaires. Si vous souhaitez rejoindre cette aventure écologique et économique, n'hésitez pas à nous contacter.",
       en: "We are actively building our partner network. If you want to join this ecological and economic adventure, don't hesitate to contact us.",
     },
-    ctaButton: { fr: "Devenir partenaire", en: "Become a partner" },
+    ctaButton: { fr: "Planter du bambou", en: "Plant bamboo" },
     whyTitle: { fr: "Pourquoi devenir partenaire ?", en: "Why become a partner?" },
     reason1: { fr: "Impact écologique mesurable et certifié", en: "Measurable and certified ecological impact" },
     reason2: { fr: "Revenus durables grâce aux crédits carbone", en: "Sustainable revenue through carbon credits" },
@@ -144,8 +144,8 @@ export const translations = {
   contact: {
     title: { fr: "Contactez-nous", en: "Contact Us" },
     subtitle: {
-      fr: "Vous souhaitez en savoir plus sur Natura Bambu ou devenir partenaire ? Écrivez-nous !",
-      en: "Want to learn more about Natura Bambu or become a partner? Write to us!",
+      fr: "Vous souhaitez en savoir plus sur BambooImpact ou devenir partenaire ? Écrivez-nous !",
+      en: "Want to learn more about BambooImpact or become a partner? Write to us!",
     },
     name: { fr: "Nom complet", en: "Full name" },
     email: { fr: "Adresse e-mail", en: "Email address" },
