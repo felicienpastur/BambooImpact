@@ -23,7 +23,7 @@ const Index = () => {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] max-h-[70vh] flex items-center justify-center overflow-hidden">
         <img src={heroBg} alt="Bamboo plantation" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-hero-overlay" />
         <div className="relative z-10 container mx-auto px-4 text-center">
