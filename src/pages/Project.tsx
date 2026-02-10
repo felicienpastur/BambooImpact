@@ -3,6 +3,7 @@ import { t } from "@/lib/translations";
 import AnimatedSection from "@/components/AnimatedSection";
 import { MapPin, Sprout, BarChart3, Coins, Check } from "lucide-react";
 import bambooForest from "@/assets/bamboo-forest.jpg";
+import bambooRoots from "@/assets/bamboo-roots.jpg";
 
 const steps = [
   { icon: MapPin, titleKey: "project.step1Title", descKey: "project.step1Desc" },
@@ -82,7 +83,7 @@ const Project = () => {
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img src={bambooForest} alt="Bamboo" className="w-full h-80 object-cover" />
+                <img src={bambooRoots} alt="Bamboo roots" className="w-full h-80 object-cover" />
               </div>
             </AnimatedSection>
           </div>
