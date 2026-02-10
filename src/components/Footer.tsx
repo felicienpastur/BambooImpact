@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const Footer = () => {
   const { lang } = useLanguage();
@@ -29,12 +29,9 @@ const Footer = () => {
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">{t("contact.info", lang)}</h4>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <span className="font-medium text-primary-foreground">Félicien Pastur</span>
-              <a href="mailto:felicien.pastur@gmail.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
-                <Mail size={14} /> felicien.pastur@gmail.com
-              </a>
-              <a href="tel:+32493933932" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
-                <Phone size={14} /> +32 493 93 39 32
+              <span className="font-medium text-primary-foreground">BambooImpact</span>
+              <a href="mailto:info.bambooimpact@gmail.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
+                <Mail size={14} /> info.bambooimpact@gmail.com
               </a>
             </div>
           </div>
