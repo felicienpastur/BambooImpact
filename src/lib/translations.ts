@@ -106,6 +106,15 @@ export const translations = {
       fr: "Les crédits carbone certifiés permettent de monétiser l'impact écologique et de générer des revenus pérennes pour les partenaires du projet.",
       en: "Certified carbon credits monetize the ecological impact and generate sustainable revenues for project partners.",
     },
+    marketTitle: { fr: "Marché du bambou en Europe", en: "Bamboo Market in Europe" },
+    marketDesc: {
+      fr: "Évolution du marché du bambou en Europe (en milliards USD).",
+      en: "Evolution of the bamboo market in Europe (in billion USD).",
+    },
+    marketSource: {
+      fr: "Sources : MarketDataForecast (Europe Bamboo Market), Global Growth Insights",
+      en: "Sources: MarketDataForecast (Europe Bamboo Market), Global Growth Insights",
+    },
     envTitle: { fr: "Impact environnemental", en: "Environmental Impact" },
     envItems: {
       fr: [

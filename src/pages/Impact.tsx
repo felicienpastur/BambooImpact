@@ -30,6 +30,20 @@ const biomassData = [
   { year: "An 10", biomass: 20 },
 ];
 
+const marketData = [
+  { year: "2016", value: 3.0 },
+  { year: "2017", value: 3.1 },
+  { year: "2018", value: 3.2 },
+  { year: "2019", value: 3.3 },
+  { year: "2020", value: 3.4 },
+  { year: "2021", value: 3.5 },
+  { year: "2022", value: 3.7 },
+  { year: "2023", value: 3.9 },
+  { year: "2024", value: 3.92 },
+  { year: "2025", value: 4.18 },
+  { year: "2026", value: 5.12 },
+];
+
 const Impact = () => {
   const { lang } = useLanguage();
   const envItems = translations.impact.envItems[lang];
@@ -93,8 +107,30 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* Carbon credits + env */}
+      {/* Bamboo Market Chart */}
       <section className="py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <AnimatedSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">{t("impact.marketTitle", lang)}</h2>
+            <p className="text-muted-foreground mb-8">{t("impact.marketDesc", lang)}</p>
+            <div className="bg-card rounded-xl border border-border p-6 shadow-sm">
+              <ResponsiveContainer width="100%" height={320}>
+                <BarChart data={marketData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(45, 15%, 85%)" />
+                  <XAxis dataKey="year" tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" />
+                  <YAxis tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" unit=" B$" domain={[0, 6]} />
+                  <Tooltip contentStyle={{ borderRadius: 8, border: "1px solid hsl(45,15%,85%)" }} />
+                  <Bar dataKey="value" fill="hsl(42, 65%, 55%)" radius={[6, 6, 0, 0]} name={lang === "fr" ? "Marché (Mds USD)" : "Market (B USD)"} />
+                </BarChart>
+              </ResponsiveContainer>
+              <p className="text-xs text-muted-foreground mt-4 italic">{t("impact.marketSource", lang)}</p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Carbon credits + env */}
+      <section className="py-20 bg-section-alt">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid md:grid-cols-2 gap-16">
             <AnimatedSection>
