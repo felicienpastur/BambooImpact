@@ -4,7 +4,7 @@ import { t } from "@/lib/translations";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Leaf, TrendingUp, Shield, ArrowRight, Sprout, Handshake, TreePine, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bamboo.jpg";
+import heroBg from "@/assets/hero-bamboo-new.jpg";
 
 const stats = [
   { value: "~100", key: "home.stat1Title" },
