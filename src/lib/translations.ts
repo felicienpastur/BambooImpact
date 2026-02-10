@@ -30,8 +30,8 @@ export const translations = {
     stat2Title: { fr: "Tonnes biomasse / ha / an", en: "Tonnes biomass / ha / year" },
     card1Title: { fr: "Séquestration carbone", en: "Carbon sequestration" },
     card1Desc: {
-      fr: "Le bambou absorbe jusqu'à 103 tonnes de CO₂ par hectare et par an, bien plus que la plupart des arbres.",
-      en: "Bamboo absorbs up to 103 tonnes of CO₂ per hectare per year, far more than most trees.",
+      fr: "Le bambou absorbe jusqu'à 100 tonnes de CO₂ par hectare et par an, bien plus qu'une forêt ou un champ classique.",
+      en: "Bamboo absorbs up to 100 tonnes of CO₂ per hectare per year, far more than a conventional forest or field.",
     },
     card2Title: { fr: "Revenus durables", en: "Sustainable income" },
     card2Desc: {
@@ -93,13 +93,21 @@ export const translations = {
     },
     co2Title: { fr: "Séquestration de CO₂", en: "CO₂ Sequestration" },
     co2Desc: {
-      fr: "Projection de la séquestration cumulative de CO₂ sur 10 ans pour une plantation d'un hectare.",
-      en: "Projected cumulative CO₂ sequestration over 10 years for a one-hectare plantation.",
+      fr: "Le bambou séquestre environ 100 tonnes de carbone par hectare par an, et il est possible de vendre les crédits carbone dès la première année sur les 5 premières années de plantation.",
+      en: "Bamboo sequesters approximately 100 tonnes of carbon per hectare per year, and carbon credits can be sold from the first year over the initial 5 years of planting.",
+    },
+    co2Conclusion: {
+      fr: "Grâce à sa capacité exceptionnelle de séquestration, le bambou représente un levier concret et immédiat pour lutter contre le changement climatique tout en générant des revenus via les crédits carbone.",
+      en: "Thanks to its exceptional sequestration capacity, bamboo represents a concrete and immediate lever to combat climate change while generating revenue through carbon credits.",
     },
     biomassTitle: { fr: "Production de biomasse", en: "Biomass Production" },
     biomassDesc: {
-      fr: "Évolution de la production annuelle de biomasse à mesure que la plantation atteint sa maturité.",
-      en: "Evolution of annual biomass production as the plantation reaches maturity.",
+      fr: "Le bambou offre de multiples produits de récolte, et en termes de biomasse, avec nos techniques de récolte durables, on peut compter sur 20 tonnes de matière sèche par hectare et par an (à maturité de la bambouseraie, environ 7 ans après la plantation).",
+      en: "Bamboo offers multiple harvest products, and in terms of biomass, with our sustainable harvesting techniques, you can expect 20 tonnes of dry matter per hectare per year (at plantation maturity, about 7 years after planting).",
+    },
+    biomassConclusion: {
+      fr: "La biomasse de bambou ouvre la voie à une valorisation diversifiée : matériaux de construction, bioénergie, textile et bien d'autres applications industrielles à forte valeur ajoutée.",
+      en: "Bamboo biomass paves the way for diversified valorization: construction materials, bioenergy, textiles, and many other high-value industrial applications.",
     },
     carbonTitle: { fr: "Crédits carbone", en: "Carbon Credits" },
     carbonDesc: {
@@ -114,6 +122,10 @@ export const translations = {
     marketSource: {
       fr: "Sources : MarketDataForecast, Global Growth Insights, Grand View Research",
       en: "Sources: MarketDataForecast, Global Growth Insights, Grand View Research",
+    },
+    marketConclusion: {
+      fr: "Le bambou s'impose dans une multitude de secteurs en Europe : construction, textile, alimentation, cosmétique, énergie. Présent dans la quasi-totalité des foyers européens sous diverses formes, il fait face à une demande qui dépasse largement la production locale. À l'heure où l'approvisionnement en ressources locales et durables devient une priorité, cultiver du bambou en Europe représente une opportunité stratégique sur l'un des plus grands marchés mondiaux.",
+      en: "Bamboo is gaining ground across a multitude of sectors in Europe: construction, textiles, food, cosmetics, and energy. Found in nearly every European household in various forms, demand far outstrips local production. As sourcing local and sustainable resources becomes a priority, growing bamboo in Europe represents a strategic opportunity in one of the world's largest markets.",
     },
     envTitle: { fr: "Impact environnemental", en: "Environmental Impact" },
     envItems: {

@@ -1,34 +1,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t, translations } from "@/lib/translations";
 import AnimatedSection from "@/components/AnimatedSection";
-import { AreaChart, Area, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { Check, Leaf } from "lucide-react";
-
-const co2Data = [
-  { year: "An 1", co2: 30 },
-  { year: "An 2", co2: 65 },
-  { year: "An 3", co2: 103 },
-  { year: "An 4", co2: 206 },
-  { year: "An 5", co2: 350 },
-  { year: "An 6", co2: 515 },
-  { year: "An 7", co2: 618 },
-  { year: "An 8", co2: 721 },
-  { year: "An 9", co2: 824 },
-  { year: "An 10", co2: 1030 },
-];
-
-const biomassData = [
-  { year: "An 1", biomass: 5 },
-  { year: "An 2", biomass: 10 },
-  { year: "An 3", biomass: 15 },
-  { year: "An 4", biomass: 18 },
-  { year: "An 5", biomass: 20 },
-  { year: "An 6", biomass: 20 },
-  { year: "An 7", biomass: 20 },
-  { year: "An 8", biomass: 20 },
-  { year: "An 9", biomass: 20 },
-  { year: "An 10", biomass: 20 },
-];
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { Check, Leaf, TrendingUp, Wind } from "lucide-react";
 
 const marketData = [
   { year: "2021", value: 3.5, projection: false },
@@ -55,49 +29,33 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* CO2 Chart */}
+      {/* CO2 Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <AnimatedSection>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">{t("impact.co2Title", lang)}</h2>
-            <p className="text-muted-foreground mb-8">{t("impact.co2Desc", lang)}</p>
-            <div className="bg-card rounded-xl border border-border p-6 shadow-sm">
-              <ResponsiveContainer width="100%" height={320}>
-                <AreaChart data={co2Data}>
-                  <defs>
-                    <linearGradient id="co2Gradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="hsl(152, 45%, 28%)" stopOpacity={0.4} />
-                      <stop offset="100%" stopColor="hsl(152, 45%, 28%)" stopOpacity={0.05} />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(45, 15%, 85%)" />
-                  <XAxis dataKey="year" tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" />
-                  <YAxis tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" unit=" t" />
-                  <Tooltip contentStyle={{ borderRadius: 8, border: "1px solid hsl(45,15%,85%)" }} />
-                  <Area type="monotone" dataKey="co2" stroke="hsl(152, 45%, 28%)" fill="url(#co2Gradient)" strokeWidth={2.5} name="CO₂ (tonnes)" />
-                </AreaChart>
-              </ResponsiveContainer>
+            <div className="flex items-start gap-4 mb-4">
+              <Wind className="text-primary mt-1 flex-shrink-0" size={32} />
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">{t("impact.co2Title", lang)}</h2>
+            </div>
+            <div className="bg-card rounded-xl border border-border p-8 shadow-sm">
+              <p className="text-muted-foreground leading-relaxed text-lg">{t("impact.co2Desc", lang)}</p>
+              <p className="text-foreground font-medium mt-4 leading-relaxed">{t("impact.co2Conclusion", lang)}</p>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Biomass Chart */}
+      {/* Biomass Section */}
       <section className="py-20 bg-section-alt">
         <div className="container mx-auto px-4 max-w-4xl">
           <AnimatedSection>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">{t("impact.biomassTitle", lang)}</h2>
-            <p className="text-muted-foreground mb-8">{t("impact.biomassDesc", lang)}</p>
-            <div className="bg-card rounded-xl border border-border p-6 shadow-sm">
-              <ResponsiveContainer width="100%" height={320}>
-                <BarChart data={biomassData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(45, 15%, 85%)" />
-                  <XAxis dataKey="year" tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" />
-                  <YAxis tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" unit=" t" />
-                  <Tooltip contentStyle={{ borderRadius: 8, border: "1px solid hsl(45,15%,85%)" }} />
-                  <Bar dataKey="biomass" fill="hsl(135, 40%, 42%)" radius={[6, 6, 0, 0]} name={lang === "fr" ? "Biomasse (tonnes)" : "Biomass (tonnes)"} />
-                </BarChart>
-              </ResponsiveContainer>
+            <div className="flex items-start gap-4 mb-4">
+              <TrendingUp className="text-primary mt-1 flex-shrink-0" size={32} />
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">{t("impact.biomassTitle", lang)}</h2>
+            </div>
+            <div className="bg-card rounded-xl border border-border p-8 shadow-sm">
+              <p className="text-muted-foreground leading-relaxed text-lg">{t("impact.biomassDesc", lang)}</p>
+              <p className="text-foreground font-medium mt-4 leading-relaxed">{t("impact.biomassConclusion", lang)}</p>
             </div>
           </AnimatedSection>
         </div>
@@ -140,6 +98,7 @@ const Impact = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground mt-3 italic">{t("impact.marketSource", lang)}</p>
+              <p className="text-foreground font-medium mt-4 leading-relaxed text-sm">{t("impact.marketConclusion", lang)}</p>
             </div>
           </AnimatedSection>
         </div>
