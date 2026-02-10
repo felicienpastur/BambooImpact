@@ -4,6 +4,7 @@ import { t } from "@/lib/translations";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Leaf, TrendingUp, Shield, ArrowRight, Sprout, Handshake, TreePine, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bamboo.jpg";
 
 const stats = [
@@ -23,37 +24,51 @@ const Index = () => {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <img src={heroBg} alt="Bamboo plantation" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-hero-overlay" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <img src={heroBg} alt="Plantation de bambous" className="absolute inset-0 w-full h-full object-cover scale-105" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+        <div className="absolute inset-0 bg-primary/20" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <AnimatedSection>
-            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 whitespace-pre-line">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-5 py-2 mb-8"
+            >
+              <Leaf className="text-accent" size={16} />
+              <span className="text-primary-foreground/90 text-sm font-medium tracking-wide uppercase">
+                {lang === "fr" ? "Agriculture durable" : "Sustainable Farming"}
+              </span>
+            </motion.div>
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8 whitespace-pre-line drop-shadow-lg">
               {t("hero.title", lang)}
             </h1>
-            <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+            <p className="text-white/80 text-lg md:text-2xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
               {t("hero.subtitle", lang)}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base font-semibold px-8">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-semibold px-10 py-6 rounded-full shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 transition-all">
                 <Link to="/contact">{t("hero.cta", lang)}</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary-foreground bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 text-base font-semibold px-8">
+              <Button asChild variant="outline" size="lg" className="border-white/40 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 text-lg font-semibold px-10 py-6 rounded-full transition-all">
                 <Link to="/project">{t("hero.cta2", lang)}</Link>
               </Button>
             </div>
           </AnimatedSection>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-primary">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+      <section className="py-20 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, hsl(var(--accent)) 0%, transparent 50%), radial-gradient(circle at 80% 50%, hsl(var(--natura-leaf)) 0%, transparent 50%)' }} />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto">
             {stats.map((s, i) => (
               <AnimatedSection key={i} delay={i * 0.15} className="text-center">
-                <div className="text-5xl md:text-6xl font-heading font-bold text-accent mb-2">{s.value}</div>
-                <div className="text-primary-foreground/80 text-sm uppercase tracking-widest">{t(s.key, lang)}</div>
+                <div className="text-6xl md:text-7xl font-heading font-bold text-accent mb-3 drop-shadow-sm">{s.value}</div>
+                <div className="text-primary-foreground/70 text-sm uppercase tracking-[0.2em] font-medium">{t(s.key, lang)}</div>
               </AnimatedSection>
             ))}
           </div>
