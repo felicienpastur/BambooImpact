@@ -5,7 +5,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
 import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
@@ -14,10 +14,29 @@ const Contact = () => {
   const [sent, setSent] = useState(false);
   const typeOptions = translations.contact.typeOptions[lang];
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    toast.success(t("contact.sent", lang));
+    setSending(true);
+    try {
+      const form = e.currentTarget;
+      const response = await fetch("https://formspree.io/f/xpwzgwkq", {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (response.ok) {
+        setSent(true);
+        toast.success(t("contact.sent", lang));
+      } else {
+        toast.error(lang === "fr" ? "Erreur lors de l'envoi. Réessayez." : "Failed to send. Please try again.");
+      }
+    } catch {
+      toast.error(lang === "fr" ? "Erreur réseau. Réessayez." : "Network error. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -45,32 +64,28 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-1.5 block">{t("contact.name", lang)}</label>
-                    <Input required placeholder={t("contact.name", lang)} className="bg-card" />
+                    <Input required name="name" placeholder={t("contact.name", lang)} className="bg-card" />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-foreground mb-1.5 block">{t("contact.email", lang)}</label>
-                    <Input required type="email" placeholder={t("contact.email", lang)} className="bg-card" />
+                    <Input required name="email" type="email" placeholder={t("contact.email", lang)} className="bg-card" />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-foreground mb-1.5 block">{t("contact.type", lang)}</label>
-                    <Select>
-                      <SelectTrigger className="bg-card">
-                        <SelectValue placeholder={t("contact.type", lang)} />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {typeOptions.map((opt) => (
-                          <SelectItem key={opt} value={opt}>{opt}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <select name="profile" required className="flex h-10 w-full rounded-md border border-input bg-card px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+                      <option value="">{t("contact.type", lang)}</option>
+                      {typeOptions.map((opt) => (
+                        <option key={opt} value={opt}>{opt}</option>
+                      ))}
+                    </select>
                   </div>
                   <div>
                     <label className="text-sm font-medium text-foreground mb-1.5 block">{t("contact.message", lang)}</label>
-                    <Textarea required rows={5} placeholder={t("contact.message", lang)} className="bg-card resize-none" />
+                    <Textarea required name="message" rows={5} placeholder={t("contact.message", lang)} className="bg-card resize-none" />
                   </div>
-                  <Button type="submit" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold mt-2">
+                  <Button type="submit" size="lg" disabled={sending} className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold mt-2">
                     <Send size={16} className="mr-2" />
-                    {t("contact.send", lang)}
+                    {sending ? (lang === "fr" ? "Envoi…" : "Sending…") : t("contact.send", lang)}
                   </Button>
                 </form>
               )}
