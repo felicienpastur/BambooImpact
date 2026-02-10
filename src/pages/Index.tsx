@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 import AnimatedSection from "@/components/AnimatedSection";
-import { Leaf, TrendingUp, Shield, ArrowRight } from "lucide-react";
+import { Leaf, TrendingUp, Shield, ArrowRight, Sprout, Handshake, TreePine, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bamboo.jpg";
 
@@ -83,6 +83,67 @@ const Index = () => {
                 </div>
               </AnimatedSection>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-10">
+            {/* Column 1 */}
+            <AnimatedSection>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 rounded-lg bg-accent/15 flex items-center justify-center">
+                  <Sprout className="text-accent" size={22} />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-foreground">{t("home.advSection1Title", lang)}</h3>
+              </div>
+              <ul className="space-y-4">
+                {["adv1", "adv2", "adv3"].map((key) => (
+                  <li key={key} className="flex items-start gap-3">
+                    <Check className="text-primary mt-1 shrink-0" size={18} />
+                    <span className="text-muted-foreground leading-relaxed">{t(`home.${key}`, lang)}</span>
+                  </li>
+                ))}
+              </ul>
+            </AnimatedSection>
+
+            {/* Column 2 */}
+            <AnimatedSection delay={0.15}>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 rounded-lg bg-accent/15 flex items-center justify-center">
+                  <Handshake className="text-accent" size={22} />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-foreground">{t("home.advSection2Title", lang)}</h3>
+              </div>
+              <ul className="space-y-4">
+                {["adv4", "adv5"].map((key) => (
+                  <li key={key} className="flex items-start gap-3">
+                    <Check className="text-primary mt-1 shrink-0" size={18} />
+                    <span className="text-muted-foreground leading-relaxed">{t(`home.${key}`, lang)}</span>
+                  </li>
+                ))}
+              </ul>
+            </AnimatedSection>
+
+            {/* Column 3 */}
+            <AnimatedSection delay={0.3}>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 rounded-lg bg-accent/15 flex items-center justify-center">
+                  <TreePine className="text-accent" size={22} />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-foreground">{t("home.advSection3Title", lang)}</h3>
+              </div>
+              <ul className="space-y-4">
+                {["adv6", "adv7"].map((key) => (
+                  <li key={key} className="flex items-start gap-3">
+                    <Check className="text-primary mt-1 shrink-0" size={18} />
+                    <span className="text-muted-foreground leading-relaxed">{t(`home.${key}`, lang)}</span>
+                  </li>
+                ))}
+              </ul>
+            </AnimatedSection>
           </div>
         </div>
       </section>
