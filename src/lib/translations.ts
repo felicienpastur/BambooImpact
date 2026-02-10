@@ -106,8 +106,8 @@ export const translations = {
       en: "Bamboo offers multiple harvest products, and in terms of biomass, with our sustainable harvesting techniques, you can expect 20 tonnes of dry matter per hectare per year (at plantation maturity, about 7 years after planting).",
     },
     biomassConclusion: {
-      fr: "La biomasse de bambou ouvre la voie à une valorisation diversifiée : matériaux de construction, bioénergie, textile et bien d'autres applications industrielles à forte valeur ajoutée.",
-      en: "Bamboo biomass paves the way for diversified valorization: construction materials, bioenergy, textiles, and many other high-value industrial applications.",
+      fr: "La biomasse de bambou ouvre la voie à une valorisation diversifiée : matériaux de construction, pousses comestibles, isolation, textile et bien d'autres applications industrielles à forte valeur ajoutée.",
+      en: "Bamboo biomass paves the way for diversified valorization: construction materials, edible shoots, insulation, textiles, and many other high-value industrial applications.",
     },
     carbonTitle: { fr: "Crédits carbone", en: "Carbon Credits" },
     carbonDesc: {
