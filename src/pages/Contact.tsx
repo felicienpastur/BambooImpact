@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -84,21 +84,14 @@ const Contact = () => {
                   <Mail size={18} className="text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="font-medium text-foreground">Email</div>
-                    <a href="mailto:felicien.pastur@gmail.com" className="hover:text-primary transition-colors">felicien.pastur@gmail.com</a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Phone size={18} className="text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-medium text-foreground">{lang === "fr" ? "Téléphone" : "Phone"}</div>
-                    <a href="tel:+32493933932" className="hover:text-primary transition-colors">+32 493 93 39 32</a>
+                    <a href="mailto:info.bambooimpact@gmail.com" className="hover:text-primary transition-colors">info.bambooimpact@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="font-medium text-foreground">Contact</div>
-                    <span>Félicien Pastur</span>
+                    <span>BambooImpact</span>
                   </div>
                 </div>
               </div>
