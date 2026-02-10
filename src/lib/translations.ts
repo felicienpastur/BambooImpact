@@ -108,12 +108,12 @@ export const translations = {
     },
     marketTitle: { fr: "Marché du bambou en Europe", en: "Bamboo Market in Europe" },
     marketDesc: {
-      fr: "Évolution du marché du bambou en Europe (en milliards USD).",
-      en: "Evolution of the bamboo market in Europe (in billion USD).",
+      fr: "Évolution du marché du bambou en Europe de 2021 à 2026, avec projection pour 2030 (en milliards USD).",
+      en: "Evolution of the bamboo market in Europe from 2021 to 2026, with 2030 projection (in billion USD).",
     },
     marketSource: {
-      fr: "Sources : MarketDataForecast (Europe Bamboo Market), Global Growth Insights",
-      en: "Sources: MarketDataForecast (Europe Bamboo Market), Global Growth Insights",
+      fr: "Sources : MarketDataForecast, Global Growth Insights, Grand View Research",
+      en: "Sources: MarketDataForecast, Global Growth Insights, Grand View Research",
     },
     envTitle: { fr: "Impact environnemental", en: "Environmental Impact" },
     envItems: {

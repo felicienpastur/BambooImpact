@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t, translations } from "@/lib/translations";
 import AnimatedSection from "@/components/AnimatedSection";
-import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { AreaChart, Area, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { Check, Leaf } from "lucide-react";
 
 const co2Data = [
@@ -31,17 +31,13 @@ const biomassData = [
 ];
 
 const marketData = [
-  { year: "2016", value: 3.0 },
-  { year: "2017", value: 3.1 },
-  { year: "2018", value: 3.2 },
-  { year: "2019", value: 3.3 },
-  { year: "2020", value: 3.4 },
-  { year: "2021", value: 3.5 },
-  { year: "2022", value: 3.7 },
-  { year: "2023", value: 3.9 },
-  { year: "2024", value: 3.92 },
-  { year: "2025", value: 4.18 },
-  { year: "2026", value: 5.12 },
+  { year: "2021", value: 3.5, projection: false },
+  { year: "2022", value: 3.7, projection: false },
+  { year: "2023", value: 3.9, projection: false },
+  { year: "2024", value: 3.92, projection: false },
+  { year: "2025", value: 4.18, projection: false },
+  { year: "2026", value: 5.12, projection: false },
+  { year: "2030", value: 8.39, projection: true },
 ];
 
 const Impact = () => {
@@ -118,12 +114,32 @@ const Impact = () => {
                 <BarChart data={marketData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(45, 15%, 85%)" />
                   <XAxis dataKey="year" tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" />
-                  <YAxis tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" unit=" B$" domain={[0, 6]} />
+                  <YAxis tick={{ fontSize: 12 }} stroke="hsl(150, 10%, 45%)" unit=" B$" domain={[0, 10]} />
                   <Tooltip contentStyle={{ borderRadius: 8, border: "1px solid hsl(45,15%,85%)" }} />
-                  <Bar dataKey="value" fill="hsl(42, 65%, 55%)" radius={[6, 6, 0, 0]} name={lang === "fr" ? "Marché (Mds USD)" : "Market (B USD)"} />
+                  <Bar dataKey="value" radius={[6, 6, 0, 0]} name={lang === "fr" ? "Marché (Mds USD)" : "Market (B USD)"}>
+                    {marketData.map((entry, index) => (
+                      <Cell
+                        key={index}
+                        fill={entry.projection ? "hsl(42, 65%, 55%)" : "hsl(152, 45%, 28%)"}
+                        fillOpacity={entry.projection ? 0.6 : 1}
+                        strokeDasharray={entry.projection ? "4 2" : undefined}
+                        stroke={entry.projection ? "hsl(42, 65%, 55%)" : undefined}
+                      />
+                    ))}
+                  </Bar>
                 </BarChart>
               </ResponsiveContainer>
-              <p className="text-xs text-muted-foreground mt-4 italic">{t("impact.marketSource", lang)}</p>
+              <div className="flex items-center gap-6 mt-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "hsl(152, 45%, 28%)" }} />
+                  <span className="text-xs text-muted-foreground">{lang === "fr" ? "Données historiques" : "Historical data"}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-sm opacity-60" style={{ backgroundColor: "hsl(42, 65%, 55%)" }} />
+                  <span className="text-xs text-muted-foreground">{lang === "fr" ? "Projection 2030" : "2030 Projection"}</span>
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground mt-3 italic">{t("impact.marketSource", lang)}</p>
             </div>
           </AnimatedSection>
         </div>
