@@ -93,7 +93,7 @@ export const translations = {
     },
     co2Title: { fr: "Séquestration de CO₂", en: "CO₂ Sequestration" },
     co2Desc: {
-      fr: "Le bambou séquestre environ 100 tonnes de carbone par hectare par an, et il est possible de vendre les crédits carbone dès la première année sur les 5 premières années de plantation.",
+      fr: "Le bambou séquestre environ 100 tonnes de carbone par hectare par an, et il est possible de vendre dès la première année les crédits carbone correspondant aux cinq premières années de la plantation.",
       en: "Bamboo sequesters approximately 100 tonnes of carbon per hectare per year, and carbon credits can be sold from the first year over the initial 5 years of planting.",
     },
     co2Conclusion: {
