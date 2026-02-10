@@ -14,7 +14,7 @@ export const translations = {
       en: "Growing the future,\none bamboo at a time",
     },
     subtitle: {
-      fr: "Valoriser les terres agricoles tout en séquestrant le carbone et en créant des revenus durables avec le bambou.",
+      fr: "Séquestrer le carbone, valoriser les terres agricoles et générer des revenus durables grâce à la culture du bambou.",
       en: "Sequester carbon, enhance agricultural land, and generate sustainable income through bamboo cultivation.",
     },
     cta: { fr: "Planter du bambou", en: "Plant bamboo" },
