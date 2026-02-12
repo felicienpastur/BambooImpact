@@ -84,8 +84,8 @@ export const translations = {
     },
     step4Title: { fr: "Valorisation économique", en: "Economic valorization" },
     step4Desc: {
-      fr: "Vente de crédits carbone, production de biomasse et matériaux de construction : les revenus générés bénéficient directement aux agriculteurs.",
-      en: "Carbon credit sales, biomass production, and building materials: generated revenues directly benefit the farmers.",
+      fr: "Vente de crédits carbone validé et certifiée par Bureau VERITAS, production de biomasse et matériaux de construction : les revenus générés bénéficient directement aux agriculteurs.",
+      en: "Sale of carbon credits validated and certified by Bureau VERITAS, biomass production, and building materials: generated revenues directly benefit the farmers.",
     },
     benefitsTitle: { fr: "Avantages pour les agriculteurs", en: "Benefits for farmers" },
     benefit1: { fr: "Revenus complémentaires stables", en: "Stable supplementary income" },
