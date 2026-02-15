@@ -10,55 +10,103 @@ export const translations = {
   },
   hero: {
     title: {
-      fr: "Cultiver l'avenir,\nun bambou à la fois",
-      en: "Growing the future,\none bamboo at a time",
+      fr: "Transformez vos terres agricoles\nen source de revenus durables",
+      en: "Turn your farmland\ninto a lasting income source",
     },
     subtitle: {
-      fr: "Valoriser les terres agricoles tout en séquestrant le carbone et en créant des revenus durables avec le bambou.",
-      en: "Enhance agricultural land while sequestering carbon and creating sustainable income with bamboo.",
+      fr: "Nous plantons du bambou en Wallonie pour capter du carbone et générer un rendement financier durable. Vous financez la plantation, nous assurons l'accompagnement technique, la certification carbone et la commercialisation de vos crédits et de votre biomasse.",
+      en: "We plant bamboo in Wallonia to capture carbon and generate lasting financial returns. You fund the planting, we provide technical support, carbon certification, and sell your credits and biomass.",
     },
-    cta: { fr: "Planter du bambou", en: "Plant bamboo" },
+    cta: { fr: "Étudier le potentiel de ma parcelle", en: "Assess my land's potential" },
     cta2: { fr: "Découvrir le projet", en: "Discover the project" },
   },
   home: {
-    whyTitle: { fr: "Pourquoi le bambou ?", en: "Why bamboo?" },
-    whySubtitle: {
-      fr: "Le bambou est l'une des plantes les plus extraordinaires de la planète. Sa croissance rapide et ses propriétés uniques en font un allié incontournable pour relever les défis écologiques et économiques de notre temps.",
-      en: "Bamboo is one of the most extraordinary plants on the planet. Its rapid growth and unique properties make it an essential ally in addressing the ecological and economic challenges of our time.",
-    },
     stat1Title: { fr: "Tonnes CO₂ / ha / an", en: "Tonnes CO₂ / ha / year" },
     stat2Title: { fr: "Tonnes biomasse / ha / an", en: "Tonnes biomass / ha / year" },
-    card1Title: { fr: "Séquestration carbone", en: "Carbon sequestration" },
+
+    // Why plant bamboo
+    whyTitle: { fr: "Pourquoi planter du bambou sur vos terres ?", en: "Why plant bamboo on your land?" },
+    whySubtitle: {
+      fr: "Le bambou est une culture pérenne et résiliente, idéale pour diversifier vos revenus tout en valorisant des terres peu rentables.",
+      en: "Bamboo is a perennial, resilient crop — ideal for diversifying your income while making the most of underperforming land.",
+    },
+    card1Title: { fr: "Nouvelle source de revenus", en: "New revenue stream" },
     card1Desc: {
-      fr: "Le bambou absorbe jusqu'à 100 tonnes de CO₂ par hectare et par an, bien plus qu'une forêt ou un champ classique.",
-      en: "Bamboo absorbs up to 100 tonnes of CO₂ per hectare per year, far more than a conventional forest or field.",
+      fr: "Générez des revenus complémentaires grâce à la vente de crédits carbone et de biomasse, sans modifier votre activité agricole principale.",
+      en: "Earn supplementary income from carbon credit and biomass sales without disrupting your main farming activity.",
     },
-    card2Title: { fr: "Revenus durables", en: "Sustainable income" },
+    card2Title: { fr: "Diversification agricole", en: "Farm diversification" },
     card2Desc: {
-      fr: "Crédits carbone, biomasse, matériaux de construction : le bambou offre de multiples sources de revenus aux agriculteurs.",
-      en: "Carbon credits, biomass, building materials: bamboo offers multiple revenue streams for farmers.",
+      fr: "Ajoutez une culture pérenne à votre exploitation. Le bambou demande peu d'entretien (~5h/ha/an) et résiste au gel, à la grêle et aux maladies.",
+      en: "Add a perennial crop to your farm. Bamboo requires minimal maintenance (~5h/ha/year) and withstands frost, hail, and disease.",
     },
-    card3Title: { fr: "Protection des sols", en: "Soil protection" },
+    card3Title: { fr: "Valorisation de vos terres", en: "Land enhancement" },
     card3Desc: {
-      fr: "Le système racinaire du bambou lutte contre l'érosion et restaure la fertilité des terres dégradées. Il contribue également à la dépollution des sols grâce à la phytoremédiation.",
-      en: "Bamboo's root system fights erosion and restores fertility to degraded land. It also contributes to soil decontamination through phytoremediation.",
+      fr: "Transformez des parcelles peu productives en actif rentable à long terme. Le bambou restaure la fertilité des sols et lutte contre l'érosion.",
+      en: "Turn underperforming plots into a long-term profitable asset. Bamboo restores soil fertility and fights erosion.",
     },
-    advSection1Title: { fr: "Une culture rentable et durable", en: "A profitable and sustainable crop" },
-    adv1: { fr: "Génère des revenus stables tout en demandant peu de travail : plantation unique et entretien minimal.", en: "Generates stable income with minimal labor: one-time planting and minimal maintenance." },
-    adv2: { fr: "Culture résiliente, peu sensible au gel, à la grêle ou aux maladies.", en: "Resilient crop, resistant to frost, hail, and disease." },
-    adv3: { fr: "Accompagnement agronomique personnalisé sur le long terme.", en: "Personalized long-term agronomic support." },
-    advSection2Title: { fr: "Valorisez votre travail en toute transparence", en: "Value your work with full transparency" },
-    adv4: { fr: "Partage équitable des revenus issus de la biomasse et des crédits carbone.", en: "Fair revenue sharing from biomass and carbon credits." },
-    adv5: { fr: "Objectif commun : maximiser rendement et rentabilité.", en: "Shared goal: maximize yield and profitability." },
-    advSection3Title: { fr: "Une culture respectueuse de l'environnement", en: "An environmentally friendly crop" },
-    adv6: { fr: "Séquestration de carbone et production de biomasse renouvelable.", en: "Carbon sequestration and renewable biomass production." },
-    adv7: { fr: "Zéro pesticide, pas de travail du sol, solution écologique et pérenne.", en: "Zero pesticides, no soil tilling — an ecological and lasting solution." },
-    ctaTitle: { fr: "Rejoignez l'aventure BambooImpact", en: "Join the BambooImpact adventure" },
+    card4Title: { fr: "Accompagnement professionnel", en: "Professional support" },
+    card4Desc: {
+      fr: "Bénéficiez d'un suivi agronomique personnalisé et d'un accompagnement technique complet, de la plantation à la commercialisation.",
+      en: "Benefit from personalized agronomic monitoring and full technical support, from planting to commercialization.",
+    },
+    card5Title: { fr: "Culture à long terme", en: "Long-term crop" },
+    card5Desc: {
+      fr: "Le bambou est une plantation unique qui produit pendant des décennies. Un investissement durable pour les générations futures.",
+      en: "Bamboo is a one-time planting that produces for decades. A lasting investment for future generations.",
+    },
+
+    // How it works
+    howTitle: { fr: "Comment ça fonctionne", en: "How it works" },
+    howSubtitle: {
+      fr: "Un processus simple et transparent, en 4 étapes.",
+      en: "A simple, transparent 4-step process.",
+    },
+    step1Title: { fr: "Analyse de votre parcelle", en: "Land assessment" },
+    step1Desc: {
+      fr: "Nous évaluons ensemble le potentiel de votre terrain en Wallonie (minimum 1 hectare) : type de sol, exposition, accessibilité.",
+      en: "We jointly assess your land's potential in Wallonia (minimum 1 hectare): soil type, exposure, accessibility.",
+    },
+    step2Title: { fr: "Plantation financée par l'agriculteur", en: "Farmer-funded planting" },
+    step2Desc: {
+      fr: "Vous investissez dans la plantation de bambou sur vos terres. 625 plants par hectare sont mis en terre selon des techniques optimisées.",
+      en: "You invest in planting bamboo on your land. 625 plants per hectare are planted using optimized techniques.",
+    },
+    step3Title: { fr: "Accompagnement technique", en: "Technical support" },
+    step3Desc: {
+      fr: "Nous assurons le suivi agronomique en partenariat avec Bamboologic pour garantir une croissance optimale avec un entretien minimal.",
+      en: "We provide agronomic monitoring in partnership with Bamboologic to ensure optimal growth with minimal maintenance.",
+    },
+    step4Title: { fr: "Certification et valorisation", en: "Certification & commercialization" },
+    step4Desc: {
+      fr: "Certification carbone via Agrocarbone et vente de crédits carbone validés et certifiés par Bureau VERITAS. BambooImpact valorise également votre biomasse. Les premiers revenus sont estimés entre 4 et 7 ans.",
+      en: "Carbon certification via Agrocarbone and sale of carbon credits validated and certified by Bureau VERITAS. BambooImpact also commercializes your biomass. First revenues are estimated between 4 and 7 years.",
+    },
+    howNote: {
+      fr: "Ce projet s'inscrit dans une vision de long terme. Les revenus se construisent progressivement à mesure que la bambouseraie atteint sa maturité.",
+      en: "This project is built for the long term. Revenues grow progressively as the bamboo plantation reaches maturity.",
+    },
+
+    // Impact vision
+    visionTitle: { fr: "Notre vision d'impact", en: "Our impact vision" },
+    visionSubtitle: {
+      fr: "BambooImpact construit un modèle structuré dès le départ, au service de l'agriculture wallonne et de l'environnement.",
+      en: "BambooImpact is building a structured model from day one, serving Walloon agriculture and the environment.",
+    },
+    vision1: { fr: "Développement de la culture du bambou en Wallonie", en: "Developing bamboo farming in Wallonia" },
+    vision2: { fr: "Captation carbone certifiée et vérifiable", en: "Certified and verifiable carbon capture" },
+    vision3: { fr: "Création d'une filière biomasse locale", en: "Building a local biomass supply chain" },
+    vision4: { fr: "Contribution à une agriculture plus résiliente et diversifiée", en: "Contributing to a more resilient and diversified agriculture" },
+
+    // CTA
+    ctaTitle: { fr: "Prêt à valoriser vos terres ?", en: "Ready to unlock your land's potential?" },
     ctaDesc: {
-      fr: "Agriculteur, propriétaire foncier ou investisseur, participez à un projet à fort impact écologique et économique.",
-      en: "Farmer, landowner, or investor — take part in a project with strong ecological and economic impact.",
+      fr: "Agriculteur ou propriétaire foncier en Wallonie, faites le premier pas vers un revenu complémentaire durable.",
+      en: "Farmer or landowner in Wallonia — take the first step toward a lasting supplementary income.",
     },
-    ctaButton: { fr: "Nous contacter", en: "Contact us" },
+    ctaButton: { fr: "Recevoir une étude gratuite de ma parcelle", en: "Get a free land assessment" },
+    ctaButton2: { fr: "Planifier un appel", en: "Schedule a call" },
+    ctaButton3: { fr: "Devenir partenaire planteur", en: "Become a planting partner" },
   },
   project: {
     title: { fr: "Le Projet BambooImpact", en: "The BambooImpact Project" },
