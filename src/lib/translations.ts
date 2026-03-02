@@ -171,8 +171,8 @@ export const translations = {
     // Future vision
     futureTitle: { fr: "Notre ambition", en: "Our ambition" },
     futureSubtitle: {
-      fr: "Construire une filière locale de transformation du bambou en Wallonie.",
-      en: "Building a local bamboo processing industry in Wallonia.",
+      fr: "Construire une filière locale de transformation du bambou.",
+      en: "Building a local bamboo processing industry.",
     },
     futureDesc: {
       fr: "BambooImpact a pour ambition de développer, dans les prochaines années, une filière locale de transformation du bambou en Wallonie. L'objectif est de valoriser la production localement : panneaux de construction, fibres textiles, pousses alimentaires, matériaux d'isolation. En créant cette chaîne de valeur locale, nous renforçons l'économie circulaire wallonne tout en réduisant l'empreinte carbone liée aux importations.",
