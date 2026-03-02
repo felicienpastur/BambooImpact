@@ -52,7 +52,7 @@ const bizItems = [
   { icon: TrendingUp, titleKey: "home.biz3Title", descKey: "home.biz3Desc" },
 ];
 
-const futureIcons = [Building2, Shirt, UtensilsCrossed, Hammer];
+const futureIcons = [Building2, Shirt, Shirt, UtensilsCrossed, Sprout, Recycle, Hammer, Leaf];
 
 const Index = () => {
   const { lang } = useLanguage();
