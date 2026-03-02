@@ -9,10 +9,10 @@
     --background: 45 30% 97%;
     --foreground: 150 20% 15%;
 
-    --card: 45 25% 95%;
+    --card: 0 0% 100%;
     --card-foreground: 150 20% 15%;
 
-    --popover: 45 30% 97%;
+    --popover: 0 0% 100%;
     --popover-foreground: 150 20% 15%;
 
     --primary: 152 45% 28%;
@@ -30,16 +30,16 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 45 15% 85%;
+    --border: 45 15% 88%;
     --input: 45 15% 85%;
     --ring: 152 45% 28%;
 
     --radius: 0.75rem;
 
-    --natura-deep: 152 55% 20%;
+    --natura-deep: 152 55% 18%;
     --natura-leaf: 135 40% 42%;
     --natura-sage: 140 20% 70%;
-    --natura-cream: 45 40% 95%;
+    --natura-cream: 45 40% 96%;
     --natura-gold: 42 65% 55%;
     --natura-earth: 25 30% 35%;
     --natura-bark: 20 15% 25%;
@@ -77,17 +77,25 @@
   .bg-hero-overlay {
     background: linear-gradient(
       180deg,
-      hsl(152 55% 20% / 0.7) 0%,
-      hsl(152 55% 20% / 0.4) 50%,
-      hsl(152 55% 20% / 0.8) 100%
+      hsl(152 55% 18% / 0.75) 0%,
+      hsl(152 55% 18% / 0.45) 40%,
+      hsl(152 55% 18% / 0.85) 100%
     );
   }
 
   .bg-section-alt {
-    background: linear-gradient(
-      180deg,
-      hsl(var(--background)) 0%,
-      hsl(var(--natura-cream)) 100%
-    );
+    background-color: hsl(45 30% 95%);
+  }
+
+  .bg-section-dark {
+    background-color: hsl(152 55% 18%);
+  }
+
+  .premium-card {
+    @apply bg-card rounded-2xl border border-border shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .premium-divider {
+    @apply w-16 h-1 bg-accent rounded-full;
   }
 }
