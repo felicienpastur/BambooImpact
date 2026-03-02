@@ -354,8 +354,8 @@ export const translations = {
   },
   footer: {
     tagline: {
-      fr: "Cultiver l'avenir, un bambou à la fois.",
-      en: "Growing the future, one bamboo at a time.",
+      fr: "Plantations de bambou en Wallonie.",
+      en: "Bamboo plantations in Wallonia.",
     },
     rights: { fr: "Tous droits réservés.", en: "All rights reserved." },
   },
