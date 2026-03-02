@@ -175,8 +175,8 @@ export const translations = {
       en: "Building a local bamboo processing industry.",
     },
     futureDesc: {
-      fr: "BambooImpact a pour ambition de développer, dans les prochaines années, une filière locale de transformation du bambou en Wallonie. L'objectif est de valoriser la production localement : panneaux de construction, fibres textiles, pousses alimentaires, matériaux d'isolation. En créant cette chaîne de valeur locale, nous renforçons l'économie circulaire wallonne tout en réduisant l'empreinte carbone liée aux importations.",
-      en: "BambooImpact aims to develop, in the coming years, a local bamboo processing industry in Wallonia. The goal is to add value to production locally: construction panels, textile fibers, food shoots, insulation materials. By creating this local value chain, we strengthen the Walloon circular economy while reducing the carbon footprint of imports.",
+      fr: "BambooImpact a pour ambition de développer, dans les prochaines années, une filière locale de transformation du bambou. L'objectif est de valoriser la production localement : panneaux de construction, fibres textiles, pousses alimentaires, matériaux d'isolation. En créant cette chaîne de valeur locale, nous renforçons l'économie circulaire wallonne tout en réduisant l'empreinte carbone liée aux importations.",
+      en: "BambooImpact aims to develop, in the coming years, a local bamboo processing industry. The goal is to add value to production locally: construction panels, textile fibers, food shoots, insulation materials. By creating this local value chain, we strengthen the Walloon circular economy while reducing the carbon footprint of imports.",
     },
     futureItems: {
       fr: [
