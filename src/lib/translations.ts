@@ -159,8 +159,8 @@ export const translations = {
     },
     biz2Title: { fr: "Gestion des crédits carbone", en: "Carbon credit management" },
     biz2Desc: {
-      fr: "Nous certifions, gérons et commercialisons les crédits carbone issus de chaque plantation. Les revenus sont partagés équitablement avec le propriétaire.",
-      en: "We certify, manage, and sell carbon credits from each plantation. Revenues are shared equitably with the landowner.",
+      fr: "Nous certifions, gérons et commercialisons les crédits carbone issus de chaque plantation.",
+      en: "We certify, manage, and sell carbon credits from each plantation.",
     },
     biz3Title: { fr: "Valorisation de la biomasse", en: "Biomass commercialization" },
     biz3Desc: {
