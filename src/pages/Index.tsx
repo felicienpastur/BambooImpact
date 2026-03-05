@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 import AnimatedSection from "@/components/AnimatedSection";
-import ROICalculator from "@/components/ROICalculator";
 import {
   Leaf, TrendingUp, Shield, ArrowRight, Sprout, Handshake,
   TreePine, Check, Search, Shovel, HeartHandshake, BadgeCheck,
-  Phone, Users, AlertTriangle,
+  Phone, Users, AlertTriangle, Calculator,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bamboo-new.jpg";
@@ -46,7 +45,6 @@ const Index = () => {
             <p className="text-primary-foreground/80 text-base md:text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
               {t("hero.subtitle", lang)}
             </p>
-            {/* Trust badges */}
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               {["hero.badge1", "hero.badge2", "hero.badge3"].map((key, i) => (
                 <span key={i} className="inline-flex items-center gap-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full px-4 py-1.5 text-xs text-primary-foreground/90 font-medium">
@@ -69,7 +67,10 @@ const Index = () => {
                 <Link to="/contact">{t("hero.cta", lang)}</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 text-base font-semibold px-8">
-                <a href="#calculator">{t("hero.cta2", lang)}</a>
+                <Link to="/revenues">
+                  <Calculator size={16} className="mr-2" />
+                  {t("hero.cta2", lang)}
+                </Link>
               </Button>
             </div>
           </AnimatedSection>
@@ -150,9 +151,6 @@ const Index = () => {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* ROI Calculator */}
-      <ROICalculator />
 
       {/* Urgency / Scarcity */}
       <section className="py-16 bg-section-alt">

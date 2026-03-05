@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navItems = [
   { key: "nav.home", path: "/" },
   { key: "nav.project", path: "/project" },
+  { key: "nav.revenues", path: "/revenues" },
   { key: "nav.impact", path: "/impact" },
   { key: "nav.partners", path: "/partners" },
   { key: "nav.contact", path: "/contact" },
