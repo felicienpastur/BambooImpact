@@ -189,34 +189,29 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* Pourquoi BambooImpact — Vision */}
-      <section className="py-24 bg-section-alt">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <AnimatedSection className="text-center mb-12">
-              <div className="premium-divider mx-auto mb-6" />
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-                {t("home.visionTitle", lang)}
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                {t("home.visionSubtitle", lang)}
-              </p>
-            </AnimatedSection>
-            <AnimatedSection delay={0.1}>
-              <div className="premium-card p-8 md:p-10">
-                <div className="space-y-4">
-                  {visionItems.map((key, i) => (
-                    <div key={i} className="flex items-center gap-4">
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Check size={16} className="text-primary" />
-                      </div>
-                      <span className="text-foreground font-medium">{t(key, lang)}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
+      {/* CTA */}
+      <section className="py-20 bg-section-dark">
+        <div className="container mx-auto px-4 text-center">
+          <AnimatedSection>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+              {lang === "fr" ? "Prêt à contribuer à cet impact ?" : "Ready to contribute to this impact?"}
+            </h2>
+            <p className="text-primary-foreground/70 max-w-xl mx-auto mb-8 text-lg">
+              {lang === "fr" ? "Découvrez combien vos terres peuvent générer." : "Discover how much your land can generate."}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8">
+                <Link to="/revenues" className="flex items-center gap-2">
+                  {lang === "fr" ? "Simuler mes revenus" : "Simulate my revenue"} <ArrowRight size={18} />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-accent bg-accent/15 text-primary-foreground hover:bg-accent/30 font-semibold px-8 shadow-sm">
+                <Link to="/contact" className="flex items-center gap-2">
+                  {lang === "fr" ? "Recevoir une étude gratuite" : "Get a free assessment"} <ArrowRight size={18} />
+                </Link>
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
