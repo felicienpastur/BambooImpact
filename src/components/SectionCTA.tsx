@@ -29,7 +29,7 @@ const SectionCTA = ({ title, description, primaryLabel, primaryTo, secondaryLabe
             </Link>
           </Button>
           {secondaryLabel && secondaryTo && (
-            <Button asChild variant="outline" size="lg" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 font-medium px-8">
+            <Button asChild size="lg" className="border border-primary-foreground/25 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/15 font-medium px-8">
               <Link to={secondaryTo}>
                 {secondaryLabel}
               </Link>
