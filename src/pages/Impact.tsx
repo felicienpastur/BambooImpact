@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t, translations } from "@/lib/translations";
 import AnimatedSection from "@/components/AnimatedSection";
+import { Button } from "@/components/ui/button";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import {
   Check, Leaf, TrendingUp, Wind, TreePine, Sprout, Recycle, Droplets,
-  Building2, Shield, Shirt, UtensilsCrossed, Hammer, Factory,
+  Building2, Shield, Shirt, UtensilsCrossed, Hammer, Factory, ArrowRight,
 } from "lucide-react";
 
 const marketData = [
