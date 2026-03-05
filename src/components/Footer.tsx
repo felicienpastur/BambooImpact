@@ -1,44 +1,86 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
-import { Mail } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
   const { lang } = useLanguage();
 
+  const navLinks = [
+    { key: "nav.home", path: "/" },
+    { key: "nav.project", path: "/project" },
+    { key: "nav.revenues", path: "/revenues" },
+    { key: "nav.impact", path: "/impact" },
+    { key: "nav.partners", path: "/partners" },
+    { key: "nav.contact", path: "/contact" },
+  ];
+
   return (
     <footer className="bg-natura-deep text-primary-foreground">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-12">
-          <div>
-            <h3 className="font-heading text-2xl font-bold mb-3">BambooImpact</h3>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
+      <div className="container mx-auto px-4">
+        {/* Main footer */}
+        <div className="py-16 grid md:grid-cols-12 gap-12">
+          {/* Brand */}
+          <div className="md:col-span-5">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-primary-foreground/10 flex items-center justify-center">
+                <span className="text-primary-foreground font-heading text-sm font-bold">B</span>
+              </div>
+              <span className="font-heading text-xl">BambooImpact</span>
+            </div>
+            <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-sm mb-6">
               {t("footer.tagline", lang)}
             </p>
+            <a 
+              href="mailto:info.bambooimpact@gmail.com" 
+              className="inline-flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+            >
+              <Mail size={14} /> info.bambooimpact@gmail.com
+            </a>
           </div>
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">Navigation</h4>
-            <div className="flex flex-col gap-2">
-              <Link to="/" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">{t("nav.home", lang)}</Link>
-              <Link to="/project" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">{t("nav.project", lang)}</Link>
-              <Link to="/revenues" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">{t("nav.revenues", lang)}</Link>
-              <Link to="/impact" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">{t("nav.impact", lang)}</Link>
-              <Link to="/partners" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">{t("nav.partners", lang)}</Link>
-              <Link to="/contact" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">{t("nav.contact", lang)}</Link>
+
+          {/* Navigation */}
+          <div className="md:col-span-3">
+            <h4 className="text-xs font-body font-semibold uppercase tracking-[0.15em] text-primary-foreground/40 mb-5">
+              Navigation
+            </h4>
+            <div className="flex flex-col gap-3">
+              {navLinks.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                >
+                  {t(item.key, lang)}
+                </Link>
+              ))}
             </div>
           </div>
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">{t("contact.info", lang)}</h4>
-            <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <span className="font-medium text-primary-foreground">BambooImpact</span>
-              <a href="mailto:info.bambooimpact@gmail.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
-                <Mail size={14} /> info.bambooimpact@gmail.com
-              </a>
-            </div>
+
+          {/* External */}
+          <div className="md:col-span-4">
+            <h4 className="text-xs font-body font-semibold uppercase tracking-[0.15em] text-primary-foreground/40 mb-5">
+              {lang === "fr" ? "Partenaire" : "Partner"}
+            </h4>
+            <a 
+              href="https://bamboologic.eu/fr/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+            >
+              Bamboologic <ArrowUpRight size={12} />
+            </a>
           </div>
         </div>
-        <div className="border-t border-primary-foreground/10 mt-12 pt-6 text-center text-sm text-primary-foreground/50">
-          © {new Date().getFullYear()} BambooImpact. {t("footer.rights", lang)}
+
+        {/* Bottom bar */}
+        <div className="border-t border-primary-foreground/10 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-primary-foreground/40">
+            © {new Date().getFullYear()} BambooImpact. {t("footer.rights", lang)}
+          </p>
+          <p className="text-xs text-primary-foreground/30">
+            {lang === "fr" ? "Wallonie, Belgique" : "Wallonia, Belgium"}
+          </p>
         </div>
       </div>
     </footer>

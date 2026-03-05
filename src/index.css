@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,43 +6,43 @@
 
 @layer base {
   :root {
-    --background: 45 30% 97%;
-    --foreground: 150 20% 15%;
+    --background: 40 20% 98%;
+    --foreground: 160 15% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 150 20% 15%;
+    --card-foreground: 160 15% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 150 20% 15%;
+    --popover-foreground: 160 15% 12%;
 
-    --primary: 152 45% 28%;
-    --primary-foreground: 45 30% 97%;
+    --primary: 155 40% 24%;
+    --primary-foreground: 40 20% 98%;
 
-    --secondary: 40 35% 88%;
-    --secondary-foreground: 150 20% 15%;
+    --secondary: 38 25% 90%;
+    --secondary-foreground: 160 15% 12%;
 
-    --muted: 45 15% 92%;
-    --muted-foreground: 150 10% 45%;
+    --muted: 40 12% 93%;
+    --muted-foreground: 160 8% 48%;
 
-    --accent: 42 65% 55%;
-    --accent-foreground: 150 20% 15%;
+    --accent: 38 55% 50%;
+    --accent-foreground: 160 15% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 45 15% 88%;
-    --input: 45 15% 85%;
-    --ring: 152 45% 28%;
+    --border: 40 12% 90%;
+    --input: 40 12% 86%;
+    --ring: 155 40% 24%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --natura-deep: 152 55% 18%;
-    --natura-leaf: 135 40% 42%;
-    --natura-sage: 140 20% 70%;
-    --natura-cream: 45 40% 96%;
-    --natura-gold: 42 65% 55%;
-    --natura-earth: 25 30% 35%;
-    --natura-bark: 20 15% 25%;
+    --natura-deep: 155 45% 14%;
+    --natura-leaf: 140 35% 38%;
+    --natura-sage: 145 18% 68%;
+    --natura-cream: 40 30% 96%;
+    --natura-gold: 38 55% 50%;
+    --natura-earth: 25 25% 32%;
+    --natura-bark: 20 12% 22%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -77,25 +77,37 @@
   .bg-hero-overlay {
     background: linear-gradient(
       180deg,
-      hsl(152 55% 18% / 0.75) 0%,
-      hsl(152 55% 18% / 0.45) 40%,
-      hsl(152 55% 18% / 0.85) 100%
+      hsl(155 45% 14% / 0.82) 0%,
+      hsl(155 45% 14% / 0.55) 50%,
+      hsl(155 45% 14% / 0.88) 100%
     );
   }
 
   .bg-section-alt {
-    background-color: hsl(45 30% 95%);
+    background-color: hsl(40 20% 96%);
   }
 
   .bg-section-dark {
-    background-color: hsl(152 55% 18%);
+    background-color: hsl(155 45% 14%);
   }
 
   .premium-card {
-    @apply bg-card rounded-2xl border border-border shadow-sm hover:shadow-md transition-all duration-300;
+    @apply bg-card rounded-xl border border-border/80 shadow-sm transition-all duration-300;
+  }
+
+  .premium-card-hover {
+    @apply premium-card hover:shadow-md hover:border-border hover:-translate-y-0.5;
   }
 
   .premium-divider {
-    @apply w-16 h-1 bg-accent rounded-full;
+    @apply w-12 h-0.5 bg-accent rounded-full;
+  }
+
+  .section-label {
+    @apply text-accent font-medium text-xs uppercase tracking-[0.2em] mb-3 block;
+  }
+
+  .editorial-border-left {
+    @apply border-l-2 border-accent pl-6;
   }
 }
