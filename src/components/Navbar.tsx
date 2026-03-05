@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
+      isLight 
         ? "bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm" 
         : "bg-transparent"
     }`}>
@@ -40,7 +40,7 @@ const Navbar = () => {
             <span className="text-primary-foreground font-heading text-sm font-bold">B</span>
           </div>
           <span className={`font-heading text-lg tracking-tight transition-colors ${
-            scrolled ? "text-foreground" : "text-primary-foreground"
+            isLight ? "text-foreground" : "text-primary-foreground"
           }`}>
             BambooImpact
           </span>
@@ -54,8 +54,8 @@ const Navbar = () => {
               to={item.path}
               className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                 location.pathname === item.path 
-                  ? scrolled ? "text-primary bg-primary/5" : "text-primary-foreground bg-primary-foreground/10"
-                  : scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted/50" : "text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                  ? isLight ? "text-primary bg-primary/5" : "text-primary-foreground bg-primary-foreground/10"
+                  : isLight ? "text-muted-foreground hover:text-foreground hover:bg-muted/50" : "text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/10"
               }`}
             >
               {t(item.key, lang)}
@@ -65,7 +65,7 @@ const Navbar = () => {
           <button
             onClick={() => setLang(lang === "fr" ? "en" : "fr")}
             className={`flex items-center gap-1.5 px-3 py-2 text-sm rounded-md transition-colors ${
-              scrolled ? "text-muted-foreground hover:text-foreground" : "text-primary-foreground/70 hover:text-primary-foreground"
+              isLight ? "text-muted-foreground hover:text-foreground" : "text-primary-foreground/70 hover:text-primary-foreground"
             }`}
           >
             <Globe size={14} />
@@ -76,7 +76,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button 
           className={`md:hidden p-2 rounded-md transition-colors ${
-            scrolled ? "text-foreground" : "text-primary-foreground"
+            isLight ? "text-foreground" : "text-primary-foreground"
           }`} 
           onClick={() => setOpen(!open)}
         >
