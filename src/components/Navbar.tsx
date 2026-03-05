@@ -19,6 +19,8 @@ const Navbar = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isHome = location.pathname === "/";
+  const isLight = scrolled || !isHome;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
