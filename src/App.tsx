@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Project from "./pages/Project";
+import Revenues from "./pages/Revenues";
 import Impact from "./pages/Impact";
 import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
@@ -27,6 +28,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/project" element={<Project />} />
+              <Route path="/revenues" element={<Revenues />} />
               <Route path="/impact" element={<Impact />} />
               <Route path="/partners" element={<Partners />} />
               <Route path="/contact" element={<Contact />} />

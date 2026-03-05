@@ -6,7 +6,15 @@ export const translations = {
     project: { fr: "Le Projet", en: "The Project" },
     impact: { fr: "Impact", en: "Impact" },
     partners: { fr: "Partenaires", en: "Partners" },
+    revenues: { fr: "Revenus", en: "Revenue" },
     contact: { fr: "Contact", en: "Contact" },
+  },
+  revenues: {
+    title: { fr: "Revenus & Business", en: "Revenue & Business" },
+    subtitle: {
+      fr: "Simulez vos revenus et découvrez notre modèle économique transparent.",
+      en: "Simulate your revenue and discover our transparent business model.",
+    },
   },
   hero: {
     title: {
