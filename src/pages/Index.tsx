@@ -190,12 +190,12 @@ const Index = () => {
                   {t("home.ctaButton", lang)} <ArrowRight size={18} />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8">
+              <Button asChild variant="outline" size="lg" className="border-accent bg-accent/15 text-primary-foreground hover:bg-accent/30 font-semibold px-8 shadow-sm">
                 <Link to="/contact" className="flex items-center gap-2">
                   <Phone size={16} /> {t("home.ctaButton2", lang)}
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8">
+              <Button asChild variant="outline" size="lg" className="border-accent bg-accent/15 text-primary-foreground hover:bg-accent/30 font-semibold px-8 shadow-sm">
                 <Link to="/contact" className="flex items-center gap-2">
                   <Users size={16} /> {t("home.ctaButton3", lang)}
                 </Link>
