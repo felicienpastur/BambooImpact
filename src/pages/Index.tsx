@@ -2,26 +2,23 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t, translations } from "@/lib/translations";
 import AnimatedSection from "@/components/AnimatedSection";
+import ROICalculator from "@/components/ROICalculator";
 import {
   Leaf, TrendingUp, Shield, ArrowRight, Sprout, Handshake,
   TreePine, Check, Search, Shovel, HeartHandshake, BadgeCheck,
-  Eye, Phone, Users, Factory, Briefcase, Award, Recycle,
+  Phone, Users, Factory, Award, Recycle, Droplets,
   Building2, Shirt, UtensilsCrossed, Hammer,
+  Coins, FileCheck, ShieldCheck, ExternalLink, Clock, AlertTriangle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bamboo-new.jpg";
 
-const stats = [
-  { value: "~100", key: "home.stat1Title" },
-  { value: "~20", key: "home.stat2Title" },
-];
-
 const services = [
   { icon: Sprout, titleKey: "home.service1Title", descKey: "home.service1Desc" },
-  { icon: Briefcase, titleKey: "home.service2Title", descKey: "home.service2Desc" },
-  { icon: Award, titleKey: "home.service3Title", descKey: "home.service3Desc" },
-  { icon: Recycle, titleKey: "home.service4Title", descKey: "home.service4Desc" },
-  { icon: Shield, titleKey: "home.service5Title", descKey: "home.service5Desc" },
+  { icon: HeartHandshake, titleKey: "home.service2Title", descKey: "home.service2Desc" },
+  { icon: Shovel, titleKey: "home.service3Title", descKey: "home.service3Desc" },
+  { icon: Coins, titleKey: "home.service4Title", descKey: "home.service4Desc" },
+  { icon: ShieldCheck, titleKey: "home.service5Title", descKey: "home.service5Desc" },
 ];
 
 const whyCards = [
@@ -42,17 +39,20 @@ const steps = [
 const envItems = [
   { icon: Leaf, titleKey: "home.env1Title", descKey: "home.env1Desc" },
   { icon: TreePine, titleKey: "home.env2Title", descKey: "home.env2Desc" },
-  { icon: Eye, titleKey: "home.env3Title", descKey: "home.env3Desc" },
+  { icon: Sprout, titleKey: "home.env3Title", descKey: "home.env3Desc" },
   { icon: Recycle, titleKey: "home.env4Title", descKey: "home.env4Desc" },
+  { icon: Droplets, titleKey: "home.env5Title", descKey: "home.env5Desc" },
 ];
 
-const bizItems = [
-  { icon: Sprout, titleKey: "home.biz1Title", descKey: "home.biz1Desc" },
-  { icon: Award, titleKey: "home.biz2Title", descKey: "home.biz2Desc" },
-  { icon: TrendingUp, titleKey: "home.biz3Title", descKey: "home.biz3Desc" },
+const bamboologicItems = [
+  "home.bamboologic1", "home.bamboologic2", "home.bamboologic3", "home.bamboologic4",
 ];
 
-const futureIcons = [Building2, Shirt, Shield, UtensilsCrossed, Sprout, Recycle, Hammer, Leaf];
+const visionItems = [
+  "home.vision1", "home.vision2", "home.vision3", "home.vision4", "home.vision5",
+];
+
+const futureIcons = [Building2, Shield, Shirt, UtensilsCrossed, Sprout, Recycle, Hammer, Leaf];
 
 const Index = () => {
   const { lang } = useLanguage();
@@ -60,7 +60,7 @@ const Index = () => {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[55vh] max-h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] max-h-[75vh] flex items-center justify-center overflow-hidden">
         <img src={heroBg} alt="Bamboo plantation in Wallonia" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-hero-overlay" />
         <div className="relative z-10 container mx-auto px-4 text-center py-16">
@@ -71,30 +71,40 @@ const Index = () => {
             <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 whitespace-pre-line">
               {t("hero.title", lang)}
             </h1>
-            <p className="text-primary-foreground/80 text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+            <p className="text-primary-foreground/80 text-base md:text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
               {t("hero.subtitle", lang)}
             </p>
-            <div className="flex flex-wrap justify-center gap-8 mb-10">
-              {stats.map((s, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-4xl md:text-5xl font-heading font-bold text-accent mb-1">{s.value}</div>
-                  <div className="text-primary-foreground/60 text-xs uppercase tracking-widest">{t(s.key, lang)}</div>
-                </div>
+            {/* Trust badges */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              {["hero.badge1", "hero.badge2", "hero.badge3"].map((key, i) => (
+                <span key={i} className="inline-flex items-center gap-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full px-4 py-1.5 text-xs text-primary-foreground/90 font-medium">
+                  <Check size={12} /> {t(key, lang)}
+                </span>
               ))}
+            </div>
+            <div className="flex flex-wrap justify-center gap-8 mb-10">
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-heading font-bold text-accent mb-1">~100</div>
+                <div className="text-primary-foreground/60 text-xs uppercase tracking-widest">{t("home.stat1Title", lang)}</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-heading font-bold text-accent mb-1">~20</div>
+                <div className="text-primary-foreground/60 text-xs uppercase tracking-widest">{t("home.stat2Title", lang)}</div>
+              </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base font-semibold px-8">
                 <Link to="/contact">{t("hero.cta", lang)}</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 text-base font-semibold px-8">
-                <Link to="/project">{t("hero.cta2", lang)}</Link>
+                <a href="#calculator">{t("hero.cta2", lang)}</a>
               </Button>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services complet */}
       <section className="py-24">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-16">
@@ -135,8 +145,168 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why plant bamboo */}
+      {/* Business Model with Commissions */}
       <section className="py-24 bg-section-alt">
+        <div className="container mx-auto px-4">
+          <AnimatedSection className="text-center mb-16">
+            <div className="premium-divider mx-auto mb-6" />
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
+              {t("home.businessTitle", lang)}
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              {t("home.businessSubtitle", lang)}
+            </p>
+          </AnimatedSection>
+          <div className="max-w-5xl mx-auto">
+            {/* Funding */}
+            <AnimatedSection delay={0.1}>
+              <div className="premium-card p-8 mb-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Coins className="text-primary" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{t("home.bizFundingTitle", lang)}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{t("home.bizFundingDesc", lang)}</p>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+            {/* Commission cards */}
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <AnimatedSection delay={0.2}>
+                <div className="premium-card p-8 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-natura-leaf/10 flex items-center justify-center mb-5">
+                    <Leaf className="text-natura-leaf" size={24} />
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold text-foreground mb-4">{t("home.bizCarbonTitle", lang)}</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 bg-primary/5 rounded-lg p-3">
+                      <Sprout size={16} className="text-primary flex-shrink-0" />
+                      <span className="text-sm font-medium text-foreground">{t("home.bizCarbonFarmer", lang)}</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-accent/5 rounded-lg p-3">
+                      <Users size={16} className="text-accent flex-shrink-0" />
+                      <span className="text-sm font-medium text-foreground">{t("home.bizCarbonPrivate", lang)}</span>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection delay={0.3}>
+                <div className="premium-card p-8 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5">
+                    <TrendingUp className="text-accent" size={24} />
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold text-foreground mb-4">{t("home.bizBiomassTitle", lang)}</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 bg-primary/5 rounded-lg p-3">
+                      <Sprout size={16} className="text-primary flex-shrink-0" />
+                      <span className="text-sm font-medium text-foreground">{t("home.bizBiomassFarmer", lang)}</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-accent/5 rounded-lg p-3">
+                      <Users size={16} className="text-accent flex-shrink-0" />
+                      <span className="text-sm font-medium text-foreground">{t("home.bizBiomassPrivate", lang)}</span>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+            {/* Timeline */}
+            <AnimatedSection delay={0.4}>
+              <div className="premium-card p-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center flex-shrink-0">
+                    <Clock className="text-accent" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{t("home.bizTimelineTitle", lang)}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{t("home.bizTimelineDesc", lang)}</p>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ROI Calculator */}
+      <ROICalculator />
+
+      {/* Certification */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <AnimatedSection className="text-center mb-16">
+            <div className="premium-divider mx-auto mb-6" />
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
+              {t("home.certTitle", lang)}
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              {t("home.certSubtitle", lang)}
+            </p>
+          </AnimatedSection>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <AnimatedSection delay={0.1}>
+              <div className="premium-card p-8 h-full text-center">
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 border-2 border-primary/20">
+                  <FileCheck className="text-primary" size={36} />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-foreground mb-3">{t("home.certAgroTitle", lang)}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{t("home.certAgroDesc", lang)}</p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.2}>
+              <div className="premium-card p-8 h-full text-center">
+                <div className="w-20 h-20 rounded-2xl bg-accent/15 flex items-center justify-center mx-auto mb-6 border-2 border-accent/20">
+                  <ShieldCheck className="text-accent" size={36} />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-foreground mb-3">{t("home.certVeritasTitle", lang)}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{t("home.certVeritasDesc", lang)}</p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Bamboologic Partnership */}
+      <section className="py-24 bg-section-alt">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <AnimatedSection className="text-center mb-12">
+              <div className="premium-divider mx-auto mb-6" />
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
+                {t("home.bamboologicTitle", lang)}
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                {t("home.bamboologicSubtitle", lang)}
+              </p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.1}>
+              <div className="premium-card p-8 md:p-10">
+                <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                  {bamboologicItems.map((key, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Check size={16} className="text-primary" />
+                      </div>
+                      <span className="text-foreground font-medium text-sm">{t(key, lang)}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="text-center">
+                  <Button asChild variant="outline" size="lg" className="font-semibold px-8">
+                    <a href="https://bamboologic.eu/fr/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      {t("home.bamboologicCta", lang)} <ExternalLink size={16} />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Why plant bamboo */}
+      <section className="py-24">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-16">
             <div className="premium-divider mx-auto mb-6" />
@@ -177,7 +347,7 @@ const Index = () => {
       </section>
 
       {/* How it works */}
-      <section className="py-24">
+      <section className="py-24 bg-section-alt">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-16">
             <div className="premium-divider mx-auto mb-6" />
@@ -211,7 +381,7 @@ const Index = () => {
       </section>
 
       {/* Environmental Impact */}
-      <section className="py-24 bg-section-alt">
+      <section className="py-24">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-16">
             <div className="premium-divider mx-auto mb-6" />
@@ -222,9 +392,22 @@ const Index = () => {
               {t("home.envSubtitle", lang)}
             </p>
           </AnimatedSection>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {envItems.map((item, i) => (
+          <div className="grid md:grid-cols-3 gap-6 mb-6 max-w-5xl mx-auto">
+            {envItems.slice(0, 3).map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
+                <div className="premium-card p-8 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-natura-leaf/10 flex items-center justify-center mb-5">
+                    <item.icon className="text-natura-leaf" size={24} />
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold text-foreground mb-3">{t(item.titleKey, lang)}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{t(item.descKey, lang)}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {envItems.slice(3).map((item, i) => (
+              <AnimatedSection key={i + 3} delay={(i + 3) * 0.1}>
                 <div className="premium-card p-8 h-full">
                   <div className="w-12 h-12 rounded-xl bg-natura-leaf/10 flex items-center justify-center mb-5">
                     <item.icon className="text-natura-leaf" size={24} />
@@ -238,36 +421,39 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Business Model */}
-      <section className="py-24">
+      {/* Pourquoi BambooImpact — Vision */}
+      <section className="py-24 bg-section-alt">
         <div className="container mx-auto px-4">
-          <AnimatedSection className="text-center mb-16">
-            <div className="premium-divider mx-auto mb-6" />
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
-              {t("home.businessTitle", lang)}
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              {t("home.businessSubtitle", lang)}
-            </p>
-          </AnimatedSection>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {bizItems.map((item, i) => (
-              <AnimatedSection key={i} delay={i * 0.12}>
-                <div className="premium-card p-8 h-full text-center">
-                  <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center mx-auto mb-5">
-                    <item.icon className="text-accent" size={26} />
-                  </div>
-                  <h3 className="font-heading text-lg font-semibold text-foreground mb-3">{t(item.titleKey, lang)}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{t(item.descKey, lang)}</p>
+          <div className="max-w-4xl mx-auto">
+            <AnimatedSection className="text-center mb-12">
+              <div className="premium-divider mx-auto mb-6" />
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
+                {t("home.visionTitle", lang)}
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                {t("home.visionSubtitle", lang)}
+              </p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.1}>
+              <div className="premium-card p-8 md:p-10">
+                <div className="space-y-4">
+                  {visionItems.map((key, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Check size={16} className="text-primary" />
+                      </div>
+                      <span className="text-foreground font-medium">{t(key, lang)}</span>
+                    </div>
+                  ))}
                 </div>
-              </AnimatedSection>
-            ))}
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* Future Vision — Local transformation */}
-      <section className="py-24 bg-section-alt">
+      {/* Future — Filières */}
+      <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-12">
@@ -302,6 +488,25 @@ const Index = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Urgency / Scarcity */}
+      <section className="py-16 bg-section-alt">
+        <div className="container mx-auto px-4">
+          <AnimatedSection>
+            <div className="max-w-3xl mx-auto premium-card p-8 md:p-10 text-center border-accent/30">
+              <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center mx-auto mb-5">
+                <AlertTriangle className="text-accent" size={28} />
+              </div>
+              <h3 className="font-heading text-2xl font-bold text-foreground mb-3">
+                {t("home.urgencyTitle", lang)}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {t("home.urgencyDesc", lang)}
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
