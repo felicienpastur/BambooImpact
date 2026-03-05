@@ -2,7 +2,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { t, translations } from "@/lib/translations";
 import AnimatedSection from "@/components/AnimatedSection";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { Check, Leaf, TrendingUp, Wind } from "lucide-react";
+import {
+  Check, Leaf, TrendingUp, Wind, TreePine, Sprout, Recycle, Droplets,
+  Building2, Shield, Shirt, UtensilsCrossed, Hammer, Factory,
+} from "lucide-react";
 
 const marketData = [
   { year: "2021", value: 3.5, projection: false },
@@ -14,12 +17,27 @@ const marketData = [
   { year: "2030", value: 8.39, projection: true },
 ];
 
+const envItems = [
+  { icon: Leaf, titleKey: "home.env1Title", descKey: "home.env1Desc" },
+  { icon: TreePine, titleKey: "home.env2Title", descKey: "home.env2Desc" },
+  { icon: Sprout, titleKey: "home.env3Title", descKey: "home.env3Desc" },
+  { icon: Recycle, titleKey: "home.env4Title", descKey: "home.env4Desc" },
+  { icon: Droplets, titleKey: "home.env5Title", descKey: "home.env5Desc" },
+];
+
+const visionItems = [
+  "home.vision1", "home.vision2", "home.vision3", "home.vision4", "home.vision5",
+];
+
+const futureIcons = [Building2, Shield, Shirt, UtensilsCrossed, Sprout, Recycle, Hammer, Leaf];
+
 const Impact = () => {
   const { lang } = useLanguage();
-  const envItems = translations.impact.envItems[lang];
+  const envListItems = translations.impact.envItems[lang];
 
   return (
     <>
+      {/* Header */}
       <section className="py-24 bg-section-alt">
         <div className="container mx-auto px-4 text-center">
           <AnimatedSection>
@@ -29,8 +47,49 @@ const Impact = () => {
         </div>
       </section>
 
+      {/* Environmental Impact Cards */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <AnimatedSection className="text-center mb-16">
+            <div className="premium-divider mx-auto mb-6" />
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {t("home.envTitle", lang)}
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              {t("home.envSubtitle", lang)}
+            </p>
+          </AnimatedSection>
+          <div className="grid md:grid-cols-3 gap-6 mb-6 max-w-5xl mx-auto">
+            {envItems.slice(0, 3).map((item, i) => (
+              <AnimatedSection key={i} delay={i * 0.1}>
+                <div className="premium-card p-8 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-natura-leaf/10 flex items-center justify-center mb-5">
+                    <item.icon className="text-natura-leaf" size={24} />
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold text-foreground mb-3">{t(item.titleKey, lang)}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{t(item.descKey, lang)}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {envItems.slice(3).map((item, i) => (
+              <AnimatedSection key={i + 3} delay={(i + 3) * 0.1}>
+                <div className="premium-card p-8 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-natura-leaf/10 flex items-center justify-center mb-5">
+                    <item.icon className="text-natura-leaf" size={24} />
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold text-foreground mb-3">{t(item.titleKey, lang)}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{t(item.descKey, lang)}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CO2 Section */}
-      <section className="py-20">
+      <section className="py-20 bg-section-alt">
         <div className="container mx-auto px-4 max-w-4xl">
           <AnimatedSection>
             <div className="flex items-start gap-4 mb-4">
@@ -46,7 +105,7 @@ const Impact = () => {
       </section>
 
       {/* Biomass Section */}
-      <section className="py-20 bg-section-alt">
+      <section className="py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <AnimatedSection>
             <div className="flex items-start gap-4 mb-4">
@@ -62,7 +121,7 @@ const Impact = () => {
       </section>
 
       {/* Bamboo Market Chart */}
-      <section className="py-20">
+      <section className="py-20 bg-section-alt">
         <div className="container mx-auto px-4 max-w-4xl">
           <AnimatedSection>
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">{t("impact.marketTitle", lang)}</h2>
@@ -104,8 +163,8 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* Carbon credits + env */}
-      <section className="py-20 bg-section-alt">
+      {/* Carbon credits + env list */}
+      <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid md:grid-cols-2 gap-16">
             <AnimatedSection>
@@ -116,7 +175,7 @@ const Impact = () => {
             <AnimatedSection delay={0.15}>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">{t("impact.envTitle", lang)}</h2>
               <div className="flex flex-col gap-3">
-                {envItems.map((item, i) => (
+                {envListItems.map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Check size={14} className="text-primary" />
@@ -126,6 +185,76 @@ const Impact = () => {
                 ))}
               </div>
             </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Pourquoi BambooImpact — Vision */}
+      <section className="py-24 bg-section-alt">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <AnimatedSection className="text-center mb-12">
+              <div className="premium-divider mx-auto mb-6" />
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+                {t("home.visionTitle", lang)}
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                {t("home.visionSubtitle", lang)}
+              </p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.1}>
+              <div className="premium-card p-8 md:p-10">
+                <div className="space-y-4">
+                  {visionItems.map((key, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Check size={16} className="text-primary" />
+                      </div>
+                      <span className="text-foreground font-medium">{t(key, lang)}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Future — Filières */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <AnimatedSection className="text-center mb-12">
+              <div className="premium-divider mx-auto mb-6" />
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                <Factory className="text-primary" size={28} />
+              </div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+                {t("home.futureTitle", lang)}
+              </h2>
+              <p className="text-accent font-medium text-base mb-4">
+                {t("home.futureSubtitle", lang)}
+              </p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.1}>
+              <div className="premium-card p-8 md:p-10 mb-8">
+                <p className="text-muted-foreground leading-relaxed text-base">
+                  {t("home.futureDesc", lang)}
+                </p>
+              </div>
+            </AnimatedSection>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {(translations.home.futureItems[lang] as readonly string[]).map((item, i) => (
+                <AnimatedSection key={i} delay={0.15 + i * 0.08}>
+                  <div className="flex items-center gap-4 premium-card p-5">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      {(() => { const Icon = futureIcons[i]; return <Icon size={20} className="text-primary" />; })()}
+                    </div>
+                    <span className="text-foreground font-medium text-sm">{item}</span>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </div>
       </section>
