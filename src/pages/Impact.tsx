@@ -27,10 +27,6 @@ const envItems = [
   { icon: Droplets, titleKey: "home.env5Title", descKey: "home.env5Desc" },
 ];
 
-const visionItems = [
-  "home.vision1", "home.vision2", "home.vision3", "home.vision4", "home.vision5",
-];
-
 const futureIcons = [Building2, Shield, Shirt, UtensilsCrossed, Sprout, Recycle, Hammer, Leaf];
 
 const Impact = () => {
